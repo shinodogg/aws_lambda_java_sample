@@ -20,8 +20,10 @@ public class GzReaderFromS3 {
 		GetObjectRequest getObjectRequest = new GetObjectRequest(
 				s3.getBucket(), s3.getKey());
 		S3Object s3Object = s3Client.getObject(getObjectRequest);
+		
 		GZIPInputStream gzis = new GZIPInputStream(s3Object.getObjectContent());
 		InputStreamReader reader = new InputStreamReader(gzis);
+		
 		BufferedReader in = new BufferedReader(reader);
 		String str;
 		while ((str = in.readLine()) != null) {

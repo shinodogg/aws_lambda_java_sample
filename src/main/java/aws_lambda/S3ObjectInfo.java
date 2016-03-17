@@ -1,8 +1,9 @@
 package aws_lambda;
 
 public class S3ObjectInfo {
-	String bucket;
-	String key;
+	private String bucket;
+	private String key;
+	private long expiration;
 
 	public String getBucket() {
 		return bucket;
@@ -18,5 +19,13 @@ public class S3ObjectInfo {
 
 	public void setKey(String key) {
 		this.key = key;
+	}
+
+	public long getExpiration() {
+		return expiration;
+	}
+
+	public void setExpiration(long expiration) {
+		this.expiration = expiration;
 	}
 }
